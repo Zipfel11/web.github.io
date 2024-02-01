@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meine Website</title>
+    <style>
+        /* Hier kannst du CSS-Stile für deine Website hinzufügen */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url("bg.jpg");
+        }
+
+        header {
+            background-color: white;
+            color: #ea899a;
+            padding: 10px;
+            text-align: center;
+            font-size: large;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .flex-parent {
+            display: flex;
+            padding: 20px;
+            border: none;
+            margin: 4px 2px;
+        }
+
+        .jc-center {
+            justify-content: center;
+        }
+
+        button.margin-right {
+            margin-right: 20px;
+        }
+
+        button {
+            border-radius: 5px; /* Abgerundete Ecken */
+            padding: 10px 20px; /* Innenabstand für den Buttoninhalt */
+            border: none; /* Keine Rahmenlinie */
+            cursor: pointer; /* Zeige die Handcursor auf dem Button an */
+        }
+
+        button.green {
+            background-color: white;
+            color: #ea899a;
+        }
+
+        button.magenta {
+            background-color: white;
+            color: #ea899a;
+        }
+
+        /* Weitere Stile können hier hinzugefügt werden */
+    </style>
+</head>
+<body>
+
+<header>
+    Willst du mein Valentin sein?
+</header>
+
+<div class="flex-parent jc-center">
+    <button type="button" class="green margin-right" id="noButton" onclick="moveNoButton()">Nein</button>
+    <button type="button" class="magenta" id="yesButton">Ja</button>
+</div>
+
+<div id="gifContainer"></div>
+
+<script>
+    palyed = false;
+
+    function moveNoButton() {
+        var noButton = document.getElementById("noButton");
+        var randomX = Math.floor(Math.random() * 201) - 100; // Zufällige Verschiebung im Bereich von -100 bis 100
+        var randomY = Math.floor(Math.random() * 201) - 100; // Zufällige Verschiebung im Bereich von -100 bis 100
+
+        randomX = Math.abs(randomX); // Stellt sicher, dass die Verschiebung nicht negativ ist
+        randomY = Math.abs(randomY); // Stellt sicher, dass die Verschiebung nicht negativ ist
+
+        noButton.style.transition = "all 1s ease"; // Animationseffekt mit 1 Sekunde Dauer
+        noButton.style.transform = "translate(" + randomX + "px, " + randomY + "px)"; // Bewegung des Buttons
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+    var playButton = document.getElementById('yesButton');
+    var gifContainer = document.getElementById('gifContainer');
+
+    playButton.addEventListener('click', function() {
+        // Erstelle ein <img>-Element
+        var img = document.createElement('img');
+        // Setze die Quelle des GIFs
+        img.src = 'yay.gif'; // Passe den Pfad zum GIF an
+        // Füge das <img>-Element dem Container hinzu
+        gifContainer.appendChild(img);
+        played = true;
+    });
+});
+</script>
+
+</body>
+</html>
