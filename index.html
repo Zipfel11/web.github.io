@@ -92,16 +92,11 @@
 
     document.addEventListener("DOMContentLoaded", function() {
     var playButton = document.getElementById('yesButton');
-    var gifContainer = document.getElementById('gifContainer');
+
 
     playButton.addEventListener('click', function() {
-        // Erstelle ein <img>-Element
-        var img = document.createElement('img');
-        // Setze die Quelle des GIFs
-        img.src = 'yay.gif'; // Passe den Pfad zum GIF an
-        // Füge das <img>-Element dem Container hinzu
-        gifContainer.appendChild(img);
-        played = true;
+        // Navigate to the new HTML file
+        window.location.href = 'yay.html'; // Change 'newpage.html' to the desired HTML file
     });
 });
 </script>

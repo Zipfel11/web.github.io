@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GIF abspielen</title>
+</head>
+<body>
+    <img src="yay.gif" id="gifImage">
+
+    <script>
+        var gifImage = document.getElementById('gifImage');
+        gifImage.addEventListener('click', function() {
+            gifImage.src = gifImage.src; // Neu laden, um das GIF abzuspielen
+        });
+    </script>
+</body>
+</html>
